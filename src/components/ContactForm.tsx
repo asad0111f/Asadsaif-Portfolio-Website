@@ -5,7 +5,8 @@ type FormState = 'idle' | 'submitting' | 'success' | 'error'
 export default function ContactForm() {
   const [state, setState] = useState<FormState>('idle')
   const [error, setError] = useState<string | null>(null)
-  const endpoint = import.meta.env.VITE_CONTACT_ENDPOINT as string | undefined
+  // Default to FormSubmit for Hostinger email if no env is provided
+  const endpoint = (import.meta.env.VITE_CONTACT_ENDPOINT as string | undefined) || 'https://formsubmit.co/info@asadsaif.com'
 
   async function onSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault()
@@ -14,17 +15,16 @@ export default function ContactForm() {
     setState('submitting')
     setError(null)
     try {
-      if (!endpoint) {
-        const name = String(data.get('name') || '').trim()
-        const email = String(data.get('email') || '').trim()
-        const message = String(data.get('message') || '').trim()
-        const subject = encodeURIComponent(`New contact from ${name || 'Website'}`)
-        const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`)
-        window.location.href = `mailto:info@asadsaif.com?subject=${subject}&body=${body}`
-        setState('success')
-        return
-      }
-      const res = await fetch(endpoint, { method: 'POST', body: data })
+      // Enrich payload for FormSubmit (works with other endpoints too)
+      const name = String(data.get('name') || '').trim()
+      data.append('_subject', `New contact from ${name || 'Website'}`)
+      data.append('_captcha', 'false')
+
+      const res = await fetch(endpoint, {
+        method: 'POST',
+        body: data,
+        headers: { Accept: 'application/json' }
+      })
       if (!res.ok) throw new Error('Failed to send message')
       setState('success')
       form.reset()
