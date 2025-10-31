@@ -35,9 +35,18 @@ export default function ProjectDetail() {
     image: project.image,
     author: { '@type': 'Person', name: site.owner.name }
   }
+  const breadcrumbJson = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: site.seo.siteUrl + '/' },
+      { '@type': 'ListItem', position: 2, name: 'Projects', item: site.seo.siteUrl + '/projects' },
+      { '@type': 'ListItem', position: 3, name: displayTitle, item: `${site.seo.siteUrl}/projects/${project.slug}` }
+    ]
+  }
   return (
     <>
-      <SEO title={displayTitle} description={project.summary} image={project.image} jsonLd={jsonLd} />
+      <SEO title={displayTitle} description={project.summary} image={project.image} jsonLd={[jsonLd, breadcrumbJson]} />
       <Section>
         <Container>
           <Link to="/projects" className="text-sm text-slate-500 hover:text-brand-red">← Back to Projects</Link>

@@ -22,9 +22,26 @@ export default function ServiceDetail() {
     )
   }
 
+  const breadcrumbJson = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: site.seo.siteUrl + '/' },
+      { '@type': 'ListItem', position: 2, name: 'Services', item: site.seo.siteUrl + '/services' },
+      { '@type': 'ListItem', position: 3, name: service.title, item: site.seo.siteUrl + '/services/' + service.slug }
+    ]
+  }
+  const serviceJson = {
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    name: service.title,
+    description: service.description,
+    provider: { '@type': 'Person', name: site.owner.name, url: site.seo.siteUrl },
+    areaServed: 'Hamilton, Ontario'
+  }
   return (
     <>
-      <SEO title={service.title} description={service.description} />
+      <SEO title={service.title} description={service.description} jsonLd={[breadcrumbJson, serviceJson]} />
       {/* Hero heading */}
       <Section>
         <Container>

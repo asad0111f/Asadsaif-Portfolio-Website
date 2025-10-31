@@ -3,11 +3,25 @@ import Section from '../components/Section'
 import SectionHeading from '../components/SectionHeading'
 import ContactForm from '../components/ContactForm'
 import { SEO } from '../lib/seo'
+import { site } from '../data/site'
 
 export default function Contact() {
   return (
     <>
-      <SEO title="Contact" />
+      <SEO title="Contact" jsonLd={{
+        '@context': 'https://schema.org',
+        '@type': 'Organization',
+        name: 'Asad Saif',
+        url: site.seo.siteUrl,
+        contactPoint: [{
+          '@type': 'ContactPoint',
+          email: 'info@asadsaif.com',
+          telephone: '+1 647-951-2786',
+          contactType: 'customer support',
+          areaServed: 'CA',
+          availableLanguage: 'en'
+        }]
+      }} />
       <Section>
         <Container>
           <SectionHeading title="Contact" subtitle="Let,s talk about your project" />
@@ -40,4 +54,3 @@ export default function Contact() {
     </>
   )
 }
-

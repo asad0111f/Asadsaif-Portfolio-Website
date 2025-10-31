@@ -6,7 +6,7 @@ import { SEO } from '@/lib/seo'
 export default function NotFound() {
   return (
     <>
-      <SEO title="404" />
+      <SEO title="404" robots="noindex,follow" />
       <Section>
         <Container>
           <div className="text-center py-24">
@@ -19,4 +19,3 @@ export default function NotFound() {
     </>
   )
 }
-

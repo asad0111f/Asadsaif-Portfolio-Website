@@ -1,4 +1,4 @@
-﻿export type SocialLinks = {
+export type SocialLinks = {
   twitter?: string
   github?: string
   linkedin?: string
@@ -93,10 +93,10 @@ export type Site = {
 export const site: Site = {
   owner: {
     name: 'Asad Saif',
-    title: 'Fullâ€‘Stack Developer & Founder',
+    title: 'Full‑Stack Developer & Founder',
     location: 'Hamilton, Ontario',
     email: 'hello@example.com',
-    phone: '+1 (555) 000â€‘0000',
+    phone: '+1 (555) 000‑0000',
     headshot: '/images/owner.svg',
     social: {
       twitter: 'https://twitter.com/',
@@ -110,14 +110,14 @@ export const site: Site = {
     { label: 'Years Experience', value: '6+' },
     { label: 'Projects Shipped', value: '40+' },
     { label: 'Happy Clients', value: '25+' },
-    { label: 'Avg. Review', value: 'â˜… 4.9' }
+    { label: 'Avg. Review', value: '★ 4.9' }
   ],
   businesses: [
     {
       name: 'Pure Marketing and Advertising',
       slug: 'pure-marketing',
       tagline: 'Marketing & development agency in Hamilton',
-      description: 'We help brands grow with dataâ€‘driven marketing, modern web experiences, and compelling content.',
+      description: 'We help brands grow with data‑driven marketing, modern web experiences, and compelling content.',
       location: 'Hamilton, Ontario',
       offerings: [
         'Social Media Management + Content Creation',
@@ -148,13 +148,13 @@ export const site: Site = {
     }
   ],
   services: [
-    { title: 'Social Media Management', slug: 'social-media-management', description: 'Grow your brand with consistent, onâ€‘brand content and community management.' },
-    { title: 'Custom Web Development', slug: 'custom-web-development', description: 'Highâ€‘performance, SEOâ€‘friendly websites built with modern stacks.' },
+    { title: 'Social Media Management', slug: 'social-media-management', description: 'Grow your brand with consistent, on‑brand content and community management.' },
+    { title: 'Custom Web Development', slug: 'custom-web-development', description: 'High‑performance, SEO‑friendly websites built with modern stacks.' },
     { title: 'Mobile App Development', slug: 'mobile-app-development', description: 'iOS/Android apps with React Native and polished UX.' },
-    { title: 'Google & Meta Ads', slug: 'google-meta-ads', description: 'ROIâ€‘focused campaigns with transparent reporting and optimization.' },
-    { title: 'Social Media + Content', slug: 'social-media-content', description: 'Strategy + production: shortâ€‘form video, carousels, graphics, and copy.' },
+    { title: 'Google & Meta Ads', slug: 'google-meta-ads', description: 'ROI‑focused campaigns with transparent reporting and optimization.' },
+    { title: 'Social Media + Content', slug: 'social-media-content', description: 'Strategy + production: short‑form video, carousels, graphics, and copy.' },
     { title: 'WordPress Development', slug: 'wordpress-development', description: 'Custom themes, performance tuning, and integrations.' },
-    { title: 'Search Engine Optimization', slug: 'seo', description: 'Technical + onâ€‘page SEO to improve visibility and conversions.' },
+    { title: 'Search Engine Optimization', slug: 'seo', description: 'Technical + on‑page SEO to improve visibility and conversions.' },
     { title: 'Graphic Designing', slug: 'graphic-design', description: 'Brand assets, marketing collateral, and visual systems.' }
   ],
   projects: [
@@ -186,7 +186,7 @@ export const site: Site = {
       summary: 'Multi-tenant analytics dashboard with role-based access.',
       type: 'web',
       year: 2023,
-      role: 'Fullâ€‘Stack Dev',
+      role: 'Full‑Stack Dev',
       tech: ['React', 'Firebase', 'Tailwind'],
       image: 'https://images.unsplash.com/photo-1551281044-8ea0b0e1f6be?w=1200&q=80&auto=format&fit=crop',
       links: { live: '#', repo: '#', case: '#' }
@@ -282,7 +282,7 @@ export const site: Site = {
     },
     {
       slug: 'tranquility-compassion',
-      title: 'Tranquility Compassion â€” Personal Support Services',
+      title: 'Tranquility Compassion — Personal Support Services',
       summary: 'Care services website with clear info architecture and CTAs.',
       type: 'web',
       year: 2024,
@@ -293,8 +293,8 @@ export const site: Site = {
     },
     {
       slug: 'isnad-association',
-      title: 'Isnad Association â€” Nonâ€‘Profit',
-      summary: 'Nonâ€‘profit site to highlight mission, programs, and donations.',
+      title: 'Isnad Association — Non‑Profit',
+      summary: 'Non‑profit site to highlight mission, programs, and donations.',
       type: 'web',
       year: 2024,
       role: 'Web Developer',
@@ -338,7 +338,7 @@ export const site: Site = {
     ,
     {
       slug: 'reel-local-eatery',
-      title: 'Brand Reel — Local Eatery',
+      title: 'Brand Reel � Local Eatery',
       summary: 'Short-form promo reel edited for a restaurant.',
       type: 'video',
       year: 2024,
@@ -349,7 +349,7 @@ export const site: Site = {
     },
     {
       slug: 'promo-fitness-studio',
-      title: 'Promo — Fitness Studio',
+      title: 'Promo � Fitness Studio',
       summary: '30-second ad edit with motion graphics and SFX.',
       type: 'video',
       year: 2024,
@@ -360,7 +360,7 @@ export const site: Site = {
     },
     {
       slug: 'identity-cafe',
-      title: 'Brand Identity — Café',
+      title: 'Brand Identity � Caf�',
       summary: 'Logo and brand system with print-ready assets.',
       type: 'design',
       year: 2024,
@@ -371,7 +371,7 @@ export const site: Site = {
     },
     {
       slug: 'poster-city-fest',
-      title: 'Promo Poster — City Fest',
+      title: 'Promo Poster � City Fest',
       summary: 'Event poster and social variants.',
       type: 'design',
       year: 2024,
@@ -426,7 +426,7 @@ export const site: Site = {
     }
   ],
   testimonials: [
-    { quote: 'Asad delivered beyond expectationsâ€”on time and on brand.', author: 'M. Clarke', role: 'CEO', company: 'Northbay' },
+    { quote: 'Asad delivered beyond expectations—on time and on brand.', author: 'M. Clarke', role: 'CEO', company: 'Northbay' },
     { quote: 'Clear communication and excellent technical depth.', author: 'R. Gupta', role: 'CTO', company: 'Astreon' },
     { quote: 'Our traffic and conversions jumped significantly.', author: 'S. Young', role: 'Marketing Lead', company: 'Brightly' },
     { quote: 'Pixel-perfect UI with smooth performance.', author: 'L. Cho', role: 'Product Manager', company: 'Velox' },
@@ -456,10 +456,10 @@ export const site: Site = {
     global: { label: 'Work with me', to: '/contact' }
   },
   seo: {
-    title: 'Asad Saif â€” Portfolio',
-    description: 'Fullâ€‘stack developer & founder building modern web and mobile products.',
+    title: 'Asad Saif � Portfolio',
+    description: 'Full‑stack developer & founder building modern web and mobile products.',
     keywords: ['Asad Saif', 'Portfolio', 'React', 'React Native', 'Hamilton', 'Web Development', 'Mobile Apps', 'SEO'],
-    siteUrl: 'https://example.com',
+    siteUrl: 'https://asadsaif.com',
     ogImage: 'https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=1200&q=80&auto=format&fit=crop'
   }
 }
