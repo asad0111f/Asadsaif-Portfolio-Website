@@ -48,7 +48,7 @@ export default function Home() {
             <h3 className="text-lg sm:text-xl font-extrabold"><span className="text-brand-red">Social Media</span> Platforms</h3>
           </div>
           <div className="relative">
-            <div className="mx-auto max-w-5xl flex items-center justify-center md:justify-between gap-6 md:gap-10 flex-nowrap overflow-x-auto md:overflow-visible px-1 py-1 snap-x md:snap-none snap-mandatory">
+            <div className="mx-auto max-w-5xl flex flex-wrap items-center justify-center md:justify-between gap-6 md:gap-10 overflow-visible px-1 py-1">
               {[
                 { label: 'Facebook', src: '/logos/facebook.svg' },
                 { label: 'Instagram', src: '/logos/instagram.svg' },
@@ -58,7 +58,7 @@ export default function Home() {
                 { label: 'Nextdoor', src: '/logos/nextdoor.svg' },
                 { label: 'Google', src: '/logos/google.svg' },
               ].map(({ label, src }) => (
-                <div key={label} className="shrink-0 md:shrink snap-center md:snap-none flex flex-col items-center gap-2">
+                <div key={label} className="flex flex-col items-center gap-2">
                   <img src={src} alt={label} loading="lazy" className="h-10 w-10" />
                   <span className="text-xs text-slate-600 dark:text-slate-300">{label}</span>
                 </div>
@@ -83,7 +83,7 @@ export default function Home() {
             <h3 className="text-lg sm:text-xl font-extrabold"><span className="text-brand-red">Our</span> Tech Stack</h3>
           </div>
           <div className="relative">
-            <div className="mx-auto max-w-5xl flex items-center justify-center md:justify-between gap-6 md:gap-10 flex-nowrap overflow-x-auto md:overflow-visible px-1 py-1 snap-x md:snap-none snap-mandatory">
+            <div className="mx-auto max-w-5xl flex flex-wrap items-center justify-center md:justify-between gap-6 md:gap-10 overflow-visible px-1 py-1">
               {[
                 { label: 'React', src: '/logos/react.svg' },
                 { label: 'TypeScript', src: '/logos/typescript.svg' },
@@ -94,7 +94,7 @@ export default function Home() {
                 { label: 'Node.js', src: '/logos/node.svg' },
                 { label: 'Stripe', src: '/logos/stripe.svg' },
               ].map(({ label, src }) => (
-                <div key={label} className="shrink-0 md:shrink snap-center md:snap-none flex flex-col items-center gap-2">
+                <div key={label} className="flex flex-col items-center gap-2">
                   <img src={src} alt={label} loading="lazy" className="h-10 w-10" />
                   <span className="text-xs text-slate-600 dark:text-slate-300">{label}</span>
                 </div>

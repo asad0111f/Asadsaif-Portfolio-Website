@@ -14,15 +14,37 @@ type VideoItem = {
 }
 
 const videos: VideoItem[] = [
+  // Canine Support Services (YouTube Shorts)
   {
-    title: 'Promo - Canine Support Services',
+    title: 'Promo - Canine Support Services (1)',
     business: 'Canine Support Services',
-    embedUrl: 'https://www.youtube.com/embed/ysz5S6PUM-U'
+    embedUrl: 'https://www.youtube-nocookie.com/embed/FKzYpHAscYE?rel=0&modestbranding=1&playsinline=1'
   },
   {
-    title: 'Brand Reel - Travel Visa',
+    title: 'Promo - Canine Support Services (2)',
+    business: 'Canine Support Services',
+    embedUrl: 'https://www.youtube-nocookie.com/embed/ntMIfyXVPHg?rel=0&modestbranding=1&playsinline=1'
+  },
+  {
+    title: 'Promo - Canine Support Services (3)',
+    business: 'Canine Support Services',
+    embedUrl: 'https://www.youtube-nocookie.com/embed/dCxg3iTJEGY?rel=0&modestbranding=1&playsinline=1'
+  },
+  {
+    title: 'Promo - Canine Support Services (4)',
+    business: 'Canine Support Services',
+    embedUrl: 'https://www.youtube-nocookie.com/embed/Sg1xzTP8EC0?rel=0&modestbranding=1&playsinline=1'
+  },
+  // Brand Reel - Travel Visa (YouTube Shorts)
+  {
+    title: 'Brand Reel - Travel Visa (1)',
     business: 'Travel Visa',
-    embedUrl: 'https://www.youtube.com/embed/ScMzIvxBSi4'
+    embedUrl: 'https://www.youtube-nocookie.com/embed/q7iGMxPbnAA?rel=0&modestbranding=1&playsinline=1'
+  },
+  {
+    title: 'Brand Reel - Travel Visa (2)',
+    business: 'Travel Visa',
+    embedUrl: 'https://www.youtube-nocookie.com/embed/2M_Vlo4shEg?rel=0&modestbranding=1&playsinline=1'
   },
 ]
 
@@ -72,7 +94,7 @@ export default function VideoEditing() {
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {videos.map((v) => (
               <div key={v.title} className="overflow-hidden rounded-2xl border border-black/10 dark:border-white/10 bg-white/70 dark:bg-white/5">
-                <div className="aspect-video w-full">
+                <div className="aspect-[9/16] w-full">
                   <iframe
                     src={v.embedUrl}
                     title={v.title}
@@ -134,4 +156,3 @@ export default function VideoEditing() {
     </>
   )
 }
-

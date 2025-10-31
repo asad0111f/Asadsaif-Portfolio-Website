@@ -492,7 +492,7 @@ export default function ServiceDetail() {
               )}
             </div>
             <div className="relative">
-              <div className="mx-auto max-w-5xl flex items-center justify-center md:justify-between gap-6 md:gap-10 flex-nowrap overflow-x-auto md:overflow-visible px-1 py-1 snap-x md:snap-none snap-mandatory">
+              <div className="mx-auto max-w-5xl flex flex-wrap items-center justify-center md:justify-between gap-6 md:gap-10 overflow-visible px-1 py-1">
                 {(service.slug === 'google-meta-ads'
                   ? [
                       { label: 'Google Ads', src: '/logos/google.svg' },
@@ -511,7 +511,7 @@ export default function ServiceDetail() {
                       { label: 'Google', src: '/logos/google.svg' },
                     ]
                 ).map(({ label, src }) => (
-                  <div key={label} className="shrink-0 md:shrink snap-center md:snap-none flex flex-col items-center gap-2">
+                  <div key={label} className="flex flex-col items-center gap-2">
                     <img src={src} alt={label} loading="lazy" className="h-10 w-10" />
                     <span className="text-xs text-slate-600 dark:text-slate-300">{label}</span>
                   </div>
@@ -556,9 +556,9 @@ export default function ServiceDetail() {
                 <h3 className="text-lg sm:text-xl font-extrabold"><span className="text-brand-red">SEO</span> Focus Areas</h3>
               </div>
               <div className="relative">
-                <div className="mx-auto max-w-5xl flex items-center justify-center md:justify-between gap-4 md:gap-8 flex-nowrap overflow-x-auto md:overflow-visible px-1 py-1 snap-x md:snap-none snap-mandatory">
+                <div className="mx-auto max-w-5xl flex flex-wrap items-center justify-center md:justify-between gap-4 md:gap-8 overflow-visible px-1 py-1">
                   {['On‑Page SEO','Technical SEO','Content Strategy','Local SEO','E‑commerce SEO'].map((label) => (
-                    <span key={label} className="shrink-0 snap-center px-3 py-2 rounded-xl bg-black/5 dark:bg-white/10 text-sm">{label}</span>
+                  <span key={label} className="px-3 py-2 rounded-xl bg-black/5 dark:bg-white/10 text-sm">{label}</span>
                   ))}
                 </div>
               </div>
@@ -610,7 +610,7 @@ export default function ServiceDetail() {
               <h3 className="text-lg sm:text-xl font-extrabold"><span className="text-brand-red">Development</span> Technologies</h3>
             </div>
             <div className="relative">
-              <div className="mx-auto max-w-5xl flex items-center justify-center md:justify-between gap-6 md:gap-10 flex-nowrap overflow-x-auto md:overflow-visible px-1 py-1 snap-x md:snap-none snap-mandatory">
+              <div className="mx-auto max-w-5xl flex flex-wrap items-center justify-center md:justify-between gap-6 md:gap-10 overflow-visible px-1 py-1">
                 {[
                   { label: 'React Native', src: '/logos/react.svg' },
                   { label: 'Flutter', src: '/logos/flutter.svg' },
@@ -637,7 +637,7 @@ export default function ServiceDetail() {
               <h3 className="text-lg sm:text-xl font-extrabold"><span className="text-brand-red">Our</span> Tech Stack</h3>
             </div>
             <div className="relative">
-              <div className="mx-auto max-w-5xl flex items-center justify-center md:justify-between gap-6 md:gap-10 flex-nowrap overflow-x-auto md:overflow-visible px-1 py-1 snap-x md:snap-none snap-mandatory">
+              <div className="mx-auto max-w-5xl flex flex-wrap items-center justify-center md:justify-between gap-6 md:gap-10 overflow-visible px-1 py-1">
                 {[
                   { label: 'React', src: '/logos/react.svg' },
                   { label: 'TypeScript', src: '/logos/typescript.svg' },

@@ -99,3 +99,6 @@ body {
   animation: shimmer 1.25s infinite;
 }
 @keyframes shimmer { 100% { transform: translateX(100%); } }
+
+/* Prevent horizontal scroll globally, allow vertical scrolling */
+html, body { overflow-x: hidden; }

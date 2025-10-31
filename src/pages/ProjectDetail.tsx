@@ -7,6 +7,7 @@ import Card from '../components/Card'
 import Tag from '../components/Tag'
 import { SEO } from '../lib/seo'
 import { creativesByProject, logosByProject } from '../data/creatives'
+import ServiceCard from '../components/ServiceCard'
 import ImageCarousel from '../components/ImageCarousel'
 
 export default function ProjectDetail() {
@@ -44,6 +45,36 @@ export default function ProjectDetail() {
       { '@type': 'ListItem', position: 3, name: displayTitle, item: `${site.seo.siteUrl}/projects/${project.slug}` }
     ]
   }
+  // Inline video embeds for specific video projects (YouTube Shorts)
+  const videoEmbedsBySlug: Record<string, string[]> = {
+    'canine-support-services-video': [
+      'https://www.youtube-nocookie.com/embed/FKzYpHAscYE?rel=0&modestbranding=1&playsinline=1',
+      'https://www.youtube-nocookie.com/embed/ntMIfyXVPHg?rel=0&modestbranding=1&playsinline=1',
+      'https://www.youtube-nocookie.com/embed/dCxg3iTJEGY?rel=0&modestbranding=1&playsinline=1',
+      'https://www.youtube-nocookie.com/embed/Sg1xzTP8EC0?rel=0&modestbranding=1&playsinline=1',
+    ],
+    'travel-visa-video': [
+      'https://www.youtube-nocookie.com/embed/q7iGMxPbnAA?rel=0&modestbranding=1&playsinline=1',
+      'https://www.youtube-nocookie.com/embed/2M_Vlo4shEg?rel=0&modestbranding=1&playsinline=1',
+    ],
+  }
+  // Related services based on project type
+  const relatedServiceSlugs = (() => {
+    switch (project.type) {
+      case 'web':
+        return ['custom-web-development', 'seo', 'wordpress-development']
+      case 'fullstack':
+        return ['custom-web-development', 'seo']
+      case 'mobile':
+        return ['mobile-app-development']
+      case 'video':
+        return ['social-media-content', 'social-media-management', 'google-meta-ads']
+      case 'design':
+        return ['graphic-design', 'social-media-content']
+      default:
+        return ['custom-web-development', 'seo']
+    }
+  })()
   return (
     <>
       <SEO title={displayTitle} description={project.summary} image={project.image} jsonLd={[jsonLd, breadcrumbJson]} />
@@ -67,6 +98,30 @@ export default function ProjectDetail() {
           </div>
         </Container>
       </Section>
+      {/* Video embeds for video projects */}
+      {videoEmbedsBySlug[project.slug] && (
+        <Section>
+          <Container>
+            <SectionHeading title="Videos" subtitle="Watch selected edits inline." />
+            <div className="mt-4 grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {videoEmbedsBySlug[project.slug].map((url) => (
+                <div key={url} className="overflow-hidden rounded-2xl border border-black/10 dark:border-white/10 bg-white/70 dark:bg-white/5">
+                  <div className="aspect-[9/16] w-full">
+                    <iframe
+                      src={url}
+                      title="Project video"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                      allowFullScreen
+                      className="h-full w-full"
+                      loading="lazy"
+                    />
+                  </div>
+                </div>
+              ))}
+            </div>
+          </Container>
+        </Section>
+      )}
       {/* Design project specific sections: always visible */}
       {project.type === 'design' ? (
         <>
@@ -157,6 +212,23 @@ export default function ProjectDetail() {
           </Section>
         )
       )}
+      {/* Related Services + CTA */}
+      <Section>
+        <Container>
+          <div className="flex items-end justify-between mb-6">
+            <SectionHeading title="Related Services" subtitle="Extend this project into results." />
+            <Link to={`/contact?project=${encodeURIComponent(project.slug)}`} className="btn-primary">Get a Free Consultation</Link>
+          </div>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {site.services
+              .filter((s) => relatedServiceSlugs.includes(s.slug))
+              .slice(0, 3)
+              .map((s) => (
+                <ServiceCard key={s.slug} s={s} />
+              ))}
+          </div>
+        </Container>
+      </Section>
     </>
   )
 }
