@@ -15,7 +15,7 @@ export default function Contact() {
         url: site.seo.siteUrl,
         contactPoint: [{
           '@type': 'ContactPoint',
-          email: 'info@asadsaif.com',
+          email: 'Asadsaif9600@gmail.com',
           telephone: '+1 647-951-2786',
           contactType: 'customer support',
           areaServed: 'CA',
@@ -30,7 +30,7 @@ export default function Contact() {
             <div className="space-y-4 text-sm text-slate-600 dark:text-slate-300">
               <div>
                 <div className="font-semibold">Email</div>
-                <a className="hover:text-brand-red" href="mailto:info@asadsaif.com">info@asadsaif.com</a>
+                <a className="hover:text-brand-red" href="mailto:Asadsaif9600@gmail.com">Asadsaif9600@gmail.com</a>
               </div>
               <div>
                 <div className="font-semibold">Phone</div>

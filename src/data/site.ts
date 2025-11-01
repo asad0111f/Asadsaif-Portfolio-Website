@@ -95,7 +95,7 @@ export const site: Site = {
     name: 'Asad Saif',
     title: 'Fullâ€‘Stack Developer & Founder',
     location: 'Hamilton, Ontario',
-    email: 'hello@example.com',
+    email: 'Asadsaif9600@gmail.com',
     phone: '+1 (555) 000â€‘0000',
     headshot: '/images/owner.svg',
     social: {

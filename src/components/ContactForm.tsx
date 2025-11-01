@@ -5,8 +5,8 @@ type FormState = 'idle' | 'submitting' | 'success' | 'error'
 export default function ContactForm() {
   const [state, setState] = useState<FormState>('idle')
   const [error, setError] = useState<string | null>(null)
-  // Default to FormSubmit for Hostinger email if no env is provided
-  const endpoint = (import.meta.env.VITE_CONTACT_ENDPOINT as string | undefined) || 'https://formsubmit.co/info@asadsaif.com'
+  // Default endpoint (can be overridden by VITE_CONTACT_ENDPOINT)
+  const endpoint = (import.meta.env.VITE_CONTACT_ENDPOINT as string | undefined) || 'https://formsubmit.co/Asadsaif9600@gmail.com'
 
   async function onSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault()
